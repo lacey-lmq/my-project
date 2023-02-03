@@ -1,0 +1,40 @@
+// 重置样式 + 公共样式
+@import "./common/index.scss";
+
+.mt-box {
+  width: 100%;
+  position: relative;
+  font-size: 30rpx;
+  color: #333;
+
+  &--empty {
+    padding: 30rpx;
+    text-align: center;
+    letter-spacing: 4rpx;
+  }
+
+  &--center {
+	@extend %flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &--border::before, &--border::after {
+	@extend %line;
+    width: 100%;
+    height: 1px;
+    background: #eee;
+    left: 0;
+    right: 0;
+    transform: scaleY(0.5);
+  }
+
+  &--border::before {
+    top: 0;
+  }
+
+  &--border::after {
+    bottom: 0;
+  }
+}

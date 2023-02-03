@@ -1,0 +1,39 @@
+// 重置样式 + 公共样式
+@import "./common/index.scss";
+
+.mt-navbar {
+	width: 100%;
+
+	&--fixed {
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 20;
+	}
+
+	&-header {
+		width: 100%;
+		padding: 0 30rpx;
+		font-size: 32rpx;
+		color: #333;
+		@extend %flex-between;
+	}
+
+	.title {
+		flex: 1;
+		text-align: center;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.backBtn,.rightBtn {
+		width: 40rpx;
+	}
+	.backBtn {
+		text-align: left;
+	}
+	.rightBtn {
+		text-align: right;
+	}
+}

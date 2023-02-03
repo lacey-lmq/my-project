@@ -1,0 +1,89 @@
+// 重置样式 + 公共样式
+@import "./common/index.scss";
+
+.mt-collapse {
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+
+  &_title {
+    width: 100%;
+    color: #424242;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    .title_left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      image {
+        margin-right: 8px;
+      }
+    }
+
+    .title_right {
+      transition: all .3s;
+
+      i {
+        font-size: 15px;
+        color: #bbb;
+      }
+
+      &_active {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &_wrap {
+    transition: all .4s;
+    height: 0;
+    overflow: hidden;
+    font-size: 14px;
+    color: #666;
+    line-height: 22px;
+    padding: 0 12px;
+
+    &_active {
+      height: auto;
+      padding: 8px 12px 14px 12px;
+    }
+  }
+
+
+  &_disabled {
+    .title_left {
+      color: #999;
+
+      image {
+        opacity: .4;
+      }
+    }
+
+    .title_right {
+      i {
+        color: #ddd;
+      }
+    }
+
+    .mt-collapse_wrap {
+      color: #bbb;
+    }
+  }
+}
+
+.mt-collapse::after, .title_after::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(.5);
+  background-color: #e5e5e5;
+  z-index: 1;
+}
